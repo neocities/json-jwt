@@ -9,11 +9,11 @@ describe JSON::JWT do
     jws
   end
   let(:claims) do
-    {
+    Hashery::KeyHash[
       iss: 'joe',
       exp: 1300819380,
       'http://example.com/is_root' => true
-    }.with_indifferent_access
+    ]
   end
   let(:no_signed) do
     'eyJ0eXAiOiJKV1QiLCJhbGciOiJub25lIn0.eyJpc3MiOiJqb2UiLCJleHAiOjEzMDA4MTkzODAsImh0dHA6Ly9leGFtcGxlLmNvbS9pc19yb290Ijp0cnVlfQ.'
